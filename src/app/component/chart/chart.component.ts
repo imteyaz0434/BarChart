@@ -15,6 +15,7 @@ export class ChartComponent implements OnInit {
   correctValue;
   Correct:number=0;
   Wrong:number = 0;
+  SubmitDisabled:boolean=false;
   form = new FormGroup({
     question1: new FormControl('',Validators.required),
     question2: new FormControl('',Validators.required),
@@ -23,10 +24,10 @@ export class ChartComponent implements OnInit {
   });
 
   Answer_sheet:any = {
-    answer1:400,
+    answer1:2011,
     answer2:400,
-    answer3:400,
-    answer4:400
+    answer3:'Australia',
+    answer4:49
   }
   constructor() { }
 
@@ -70,6 +71,7 @@ ngOnInit() {
       }
     });
     this.updateChart(this.Correct,this.Wrong);
+    this.SubmitDisabled = true;
   }
 
   cleardata(){
@@ -78,5 +80,8 @@ ngOnInit() {
     this.chart.options.data[0].dataPoints[1].y = 0;
     this.chart.render();
     this.clear = false; 
+    this.SubmitDisabled = false;
+    this.Correct=0;
+    this.Wrong = 0;
   }
 }
