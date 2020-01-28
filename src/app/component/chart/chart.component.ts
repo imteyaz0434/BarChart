@@ -11,8 +11,8 @@ export class ChartComponent implements OnInit {
   title = 'Cricket';
   chart:any;
   clear:boolean = false;
-  formValue;
-  correctValue;
+  formValue:any;
+  correctValue:any;
   Correct:number=0;
   Wrong:number = 0;
   SubmitDisabled:boolean=false;
