@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-sm-12 col-md-6 ">
+        <div class="jumbotron">
+            <form [formGroup]="form" name="form" (ngSubmit)="Submit()">
+                <div class="form-group">
+                  <label for="question1">Question1</label>
+                  <select class="form-control" formControlName="question1" name="question1" [ngClass]="{'is-invalid': form.get('question1').error && form.get('question1').touched }" >
+                    <option>400</option>
+                    <option>500</option>
+                    <option>600</option>
+                    <option>700</option>
+                </select>
+                <div class="invalid-feedback">
+                    <p>Required</p>
+                </div>
+                </div>
+                <div class="form-group">
+                  <label for="question2">Question2</label>
+                  <select class="form-control" formControlName="question2" name="question2" [ngClass]="{'is-invalid': form.get('question2').error && form.get('question2').touched }">
+                    <option>2003</option>
+                    <option>2003</option>
+                    <option>2003</option>
+                    <option>2003</option>
+              </select>
+              <div class="invalid-feedback">
+                <p>Required</p>
+            </div>
+                </div>
+                <div class="form-group">
+                    <label for="question3">Question3</label>
+                    <select class="form-control" formControlName= "question3" name="question3" [ngClass]="{'is-invalid': form.get('question3').error && form.get('question3').touched }">
+                        <option>400</option>
+                        <option>400</option>
+                        <option>400</option>
+                        <option>400</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    <p>Required</p>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label  for="question4">Question4</label>
+                    <input type="text" class="form-control" formControlName="question4" name="question4" [ngClass]="{'is-invalid': form.get('question4').error && form.get('question4').touched }"/>
+                    <div class="invalid-feedback">
+                        <p>Required</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary m-3" [disabled]="!form.valid">Submit</button>
+                <button type="button" class="btn btn-danger m-3" [disabled] ="!clear" (click)="cleardata()">Clear</button>
+            </form>
+              </div>
+        </div> 
+    <div class="col-sm-12 col-md-6 ">
+        <div id="chartContainer" style="height: 400px; width: 80%; margin: 10%;"></div>    
+    </div>
+</div>
+  
