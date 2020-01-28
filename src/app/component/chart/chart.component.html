@@ -3,50 +3,57 @@
         <div class="jumbotron">
             <form [formGroup]="form" name="form" (ngSubmit)="Submit()">
                 <div class="form-group">
-                  <label for="question1">Question1</label>
-                  <select class="form-control" formControlName="question1" name="question1" [ngClass]="{'is-invalid': form.get('question1').error && form.get('question1').touched }" >
-                    <option>400</option>
-                    <option>500</option>
-                    <option>600</option>
-                    <option>700</option>
+                  <label for="question1">1.When was the last time India won the Cricket World Cup?</label>
+                  <select class="form-control" formControlName="question1" name="question1" [ngClass]="{'is-invalid':form.get('question1').touched && form.get('question1').invalid}" >
+                    <option>2015</option>
+                    <option>2003</option>
+                    <option>2011</option>
+                    <option>1983</option>
                 </select>
                 <div class="invalid-feedback">
-                    <p>Required</p>
-                </div>
+                    <div> Required*</div>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="question2">Question2</label>
-                  <select class="form-control" formControlName="question2" name="question2" [ngClass]="{'is-invalid': form.get('question2').error && form.get('question2').touched }">
-                    <option>2003</option>
-                    <option>2003</option>
-                    <option>2003</option>
-                    <option>2003</option>
+                  <label for="question2">2.What is the highest individual score by a batsman in Test Cricket </label>
+                  <select class="form-control" formControlName="question2" name="question2" [ngClass]="{'is-invalid':form.get('question2').touched && form.get('question2').invalid}">
+                    <option>400</option>
+                    <option>375</option>
+                    <option>264</option>
+                    <option>300</option>
               </select>
-              <div class="invalid-feedback">
-                <p>Required</p>
-            </div>
+                <div class="invalid-feedback">
+                    <div> Required*</div>
+                </div>
                 </div>
                 <div class="form-group">
-                    <label for="question3">Question3</label>
-                    <select class="form-control" formControlName= "question3" name="question3" [ngClass]="{'is-invalid': form.get('question3').error && form.get('question3').touched }">
-                        <option>400</option>
-                        <option>400</option>
-                        <option>400</option>
-                        <option>400</option>
+                    <label for="question3">3.Who has won the most number of Cricket World Cup</label>
+                    <select class="form-control" formControlName= "question3" name="question3" [ngClass]="{'is-invalid':form.get('question3').touched && form.get('question3').invalid}">
+                        <option>India</option>
+                        <option>Australia</option>
+                        <option>West Indies</option>
+                        <option>Pakistan</option>
                   </select>
                   <div class="invalid-feedback">
-                    <p>Required</p>
-                </div>
+                    <div> Required*</div>
+                  </div>
                 </div>
                 <div class="form-group">
-                    <label  for="question4">Question4</label>
-                    <input type="text" class="form-control" formControlName="question4" name="question4" [ngClass]="{'is-invalid': form.get('question4').error && form.get('question4').touched }"/>
+                    <label  for="question4">4.How many International Centuries does Sachin Tendulakr has under his name</label>
+                    <input type="text" class="form-control" formControlName="question4" name="question4" [ngClass]="{'is-invalid':form.get('question4').touched && form.get('question4').invalid}">
                     <div class="invalid-feedback">
-                        <p>Required</p>
+                        <div> Required*</div>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Submit</button>  
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger btn-block" [disabled] ="!clear" (click)="cleardata()">Clear</button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary m-3" [disabled]="!form.valid">Submit</button>
-                <button type="button" class="btn btn-danger m-3" [disabled] ="!clear" (click)="cleardata()">Clear</button>
+                
             </form>
               </div>
         </div> 

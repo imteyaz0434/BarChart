@@ -22,7 +22,7 @@ export class ChartComponent implements OnInit {
     question4: new FormControl('',Validators.required)
   });
 
-  Answer_sheet = {
+  Answer_sheet:any = {
     answer1:400,
     answer2:400,
     answer3:400,
@@ -36,7 +36,7 @@ ngOnInit() {
       text: "Result"
     },
     axisY: {
-      title: "Number of Question",
+      title: "Number",
       suffix: ""
     },
     data: [{
@@ -45,7 +45,7 @@ ngOnInit() {
       indexLabel: "{y}",
       dataPoints: [
         { label: "Correct", y: 0 , color:"#6B8E23" },
-        { label: "Wrong", 	y:0 ,color: "#FF2500" }
+        { label: "Incorrect", 	y:0 ,color: "#FF2500" }
       ]
     }]
   });
