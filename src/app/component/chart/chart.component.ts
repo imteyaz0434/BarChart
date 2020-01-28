@@ -20,7 +20,7 @@ export class ChartComponent implements OnInit {
     question1: new FormControl('',Validators.required),
     question2: new FormControl('',Validators.required),
     question3: new FormControl('',Validators.required),
-    question4: new FormControl('',Validators.required)
+    question4: new FormControl('',[Validators.required,Validators.maxLength(2)])
   });
 
   Answer_sheet:any = {
@@ -83,5 +83,13 @@ ngOnInit() {
     this.SubmitDisabled = false;
     this.Correct=0;
     this.Wrong = 0;
+  }
+  isNumber(event: any) {
+    const pattern = /[0-9]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }
